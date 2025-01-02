@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.9.1"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:ci": "playwright test --reporter=dot"
+    // "test:allure": "playwright test --reporter=line,allure-playwright",
+    // "allure:generate": "allure generate ./allure-results -o ./allure-report --clean",
+    // "allure:open": "allure open ./allure-report"
+  }
+}
