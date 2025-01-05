@@ -1,5 +1,6 @@
 import random
 import string
+import uuid
 from datetime import datetime, timedelta
 from playwright.sync_api import TimeoutError
 
@@ -41,7 +42,9 @@ def randomn_assessment_name_description():
     descriptors = ['Performance', 'Skill', 'Fitness', 'Endurance', 'Strength', 'Agility'] 
     sport = random.choice(sports) 
     descriptor = random.choice(descriptors) 
-    assessment_name = f"{descriptor} {sport} Assessment" 
+    unique_id = uuid.uuid4().hex[:8] # Generate a short unique identifier
+    
+    assessment_name = f"{descriptor} {sport} Assessment {unique_id}" 
     assessment_description = f"This assessment focuses on evaluating the {descriptor.lower()} aspects of {sport.lower()}."
     return assessment_name, assessment_description
 

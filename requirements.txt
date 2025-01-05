@@ -1,10 +1,5 @@
-# playwright>=1.44.0
-# pytest-playwright>=0.5.0
-# pytest-xdist>=3.6.1
-
-
 # Playwright and related dependencies
-playwright>=1.48.0
+playwright>=1.49.1
 pytest-playwright>=0.5.0
 pytest-cov
 pytest-html

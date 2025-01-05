@@ -3,7 +3,7 @@ import time
 import pytest
 # from pages.login_page import LoginPage
 from pages.home_page import HomePage
-from utils.config_copy import load_config 
+#from utils.config import load_config 
 
 @pytest.mark.sanity 
 def test_login(logged_in_page): 
@@ -19,7 +19,7 @@ def test_login(logged_in_page):
     print(f"Page Title: {logged_in_page.title()}") 
     print("Test completed successfully")
     home_page.logout()
-
+ 
 
 
 

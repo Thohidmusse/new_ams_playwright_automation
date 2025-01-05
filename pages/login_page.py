@@ -1,9 +1,10 @@
-from pages.base_page import BasePage
+from pages.base_page import BasePage 
 # from utils.config import BASE_URL
 
 class LoginPage(BasePage):
     def __init__(self, page, base_url):
-        super().__init__(page)
+        #super().__init__(page)
+        self.page = page
         self.base_url = base_url
         self.username_field = page.locator('//*[@id="email"]')
         self.password_field = page.locator('//*[@id="password"]')

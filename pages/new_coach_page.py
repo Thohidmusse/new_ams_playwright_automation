@@ -5,6 +5,7 @@ from utils.config import load_config
 from utils.generate_data import random_full_name_email, randomn_mobile_number, randomn_dob, randomn_address, randomn_religion
 from utils.generate_data import randomn_gender, randomn_caste, randomn_relation, randomn_organization_name, randomn_select_sports_name
 from utils.generate_data import select_random_coach_sport
+
 class NewCoachPage(BasePage): 
     def __init__(self, page):
         super().__init__(page)

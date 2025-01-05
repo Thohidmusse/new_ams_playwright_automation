@@ -1,3 +1,0 @@
-Page Title: Athlete Management System
-Hi
-Test completed successfully

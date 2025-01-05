@@ -47,8 +47,8 @@ class AssessmentPage(BasePage):
         self.assessment_assessor.select_option(label='Assessor')
         self.assessment_table_checkbox.wait_for(state='visible', timeout=60000)
         self.assessment_table_checkbox.check()
-        #self.assessment_submit.click()
-        #assert self.assessment_submit_success_message.text_content() == "Form submitted successfully"
+        self.assessment_submit.click()
+        # assert self.assessment_submit_success_message.text_content() == "Form submitted successfully"
         self.assessment_back.click()
         assert self.assessment_page_heading.text_content() == "Assessment"
         

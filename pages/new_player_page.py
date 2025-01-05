@@ -68,7 +68,7 @@ class NewPlayerPage(BasePage):
         self.new_player_medal_won = page.locator('//select[@name="asiCareerHighlights"]')
         self.new_player_short_term_goals = page.get_by_placeholder('Enter Short-term Goals')
         self.new_player_long_term_goals = page.get_by_placeholder('Enter Long-term Goals')
-        #page.get_by_role('button', name='Submit')
+        self.new_player_submit = page.get_by_role('button', name='Submit')
         
         # self.new_player_ = page.getByRole('button', { name: 'Back' })
         # self.new_player_ = page.getByRole('button', { name: 'Back' })
@@ -176,4 +176,5 @@ class NewPlayerPage(BasePage):
         randomn_medal_won(self.page, '//select[@name="asiCareerHighlights"]')
         self.new_player_short_term_goals.fill(short_term_goals)
         self.new_player_long_term_goals.fill(long_term_goals)
+        self.new_player_submit.click()
         
