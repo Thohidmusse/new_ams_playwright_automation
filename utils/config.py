@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-def load_config(role="ORG_ADMIN"):  
+def load_config(role="ASSESSOR"):  
     """
     Load configuration settings from environment variables for a given role.
 
@@ -31,6 +31,7 @@ def load_config(role="ORG_ADMIN"):
         "ADMIN": f"{environment}_AMS_USERNAME",
         "ORG_ADMIN": f"{environment}_ORG_ADMIN_USERNAME",
         "SCIENCE_STAFF": f"{environment}_SCIENCE_STAFF_USERNAME",
+        "ASSESSOR": f"{environment}_ASSESSOR_USERNAME",
     }
 
     # Fallback if unexpected role is passed
