@@ -14,7 +14,7 @@ class AssessorAssessmentPage(BasePage):
         
         
 
-        self.player = self.page.locator("//div[normalize-space()='60']")
+        self.player = self.page.locator("//div[normalize-space()='13']")
 
       
         self.edit_icon = page.locator(' //body[1]/app-root[1]/app-sidenavbar[1]/section[1]/main[1]/app-physicalfitness-assessment-list[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ag-grid-angular[1]/div[3]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/button[2]/i[1]')

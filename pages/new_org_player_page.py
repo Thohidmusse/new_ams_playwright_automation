@@ -38,10 +38,9 @@ class NewPlayerPage(BasePage):
         self.new_player_ecname  = page.locator('//input[@name="usrECName"]')
         self.new_player_ecrelation  = page.locator('//input[@name="usrECRelationship"]')
         self.new_player_ecphone  = page.locator('//input[@name="usrECPhoneNo"]')
-        self.new_player_organization  = page.locator('//select[@name="usrOrganization"]')
+        #self.new_player_organization  = page.locator('//select[@name="usrOrganization"]')
         self.new_player_class  = page.locator('//select[@name="usrClass"]') 
-        self.new_player_next_button_form1 = page.locator('//button[normalize-space()="Next Step"]')
-                                                         
+        self.new_player_next_button_form2 = page.get_by_role('button', name='Next Step')                                                         
         # form-2 elements
         self.new_player_allergies = page.get_by_placeholder('Enter Allergies')
         self.new_player_current_medications = page.get_by_placeholder('Enter Current Medications')
@@ -138,15 +137,13 @@ class NewPlayerPage(BasePage):
         self.new_player_ecname.fill(full_name)
         self.new_player_ecrelation.fill(relation)
         self.new_player_ecphone.fill(mobile_number)
-        self.new_player_organization.select_option(label='DYES')
+        #self.new_player_organization.select_option(label='DYES')
         time.sleep(1)
         self.new_player_class.click()
         self.new_player_class.wait_for(state='visible')
-        self.scroll_to_element(self.new_player_class) 
+        self.scroll_to_element(self.new_player_class)
         time.sleep(1)
-        randomn_player_class(self.page, '//select[@name="usrClass"]')
-        self.new_player_next_button_form1.click()
-        
+        self.new_player_class.select_option(index=1)       
         # form-2 elements actions
         self.new_player_allergies.fill(allergies)
         self.new_player_current_medications.fill(medications)

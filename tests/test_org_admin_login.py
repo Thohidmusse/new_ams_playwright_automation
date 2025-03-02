@@ -1,16 +1,17 @@
-from utils.config import load_config
-from pages.login_page import LoginPage
+import pytest
 from pages.home_page import HomePage
 
-def test_org_admin_login(page):
-    config = load_config("ORG_ADMIN")
-    login_page = LoginPage(page, config['BASE_URL'])
-    login_page.login(config['USERNAME'], config['PASSWORD'])
+@pytest.mark.sanity
+def test_org_admin_login(logged_in_page):
+    assert logged_in_page.title() == "Athlete Management System"
 
-    assert page.title() == "Athlete Management System"
+    # Create HomePage with role = Assessor
+    home_page = HomePage(logged_in_page, role="Organization admin")
 
-    home_page = HomePage(page)
-    home_page.menu()
+    # Navigate to the correct menu for Assessor
+    home_page.navigate_to("Sports Talent Identification")
+
+    print(f"Page Title: {logged_in_page.title()}")
+    print("Test completed successfully")
+
     home_page.logout()
-
-    print("ORG Admin Login Test Completed Successfully")

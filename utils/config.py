@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-def load_config(role="ASSESSOR"):  
+def load_config(role="ORG_ADMIN"):  
     """
     Load configuration settings from environment variables for a given role.
 

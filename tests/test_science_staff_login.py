@@ -1,16 +1,17 @@
-from utils.config import load_config
-from pages.login_page import LoginPage
+import pytest
 from pages.home_page import HomePage
 
-def test_science_staff_login(page):
-    config = load_config("SCIENCE_STAFF")
-    login_page = LoginPage(page, config['BASE_URL'])
-    login_page.login(config['USERNAME'], config['PASSWORD'])
+@pytest.mark.sanity
+def test_science_staff_login(logged_in_page):
+    assert logged_in_page.title() == "Athlete Management System"
 
-    assert page.title() == "Athlete Management System"
+    # This assumes you are testing Super Admin login here. Change if needed.
+    home_page = HomePage(logged_in_page, role="Science staff")
 
-    home_page = HomePage(page)
-    home_page.menu()
+    # Super Admin should go to Manage > User
+    home_page.navigate_to("Sports Cognitive")
+
+    print(f"Page Title: {logged_in_page.title()}")
+    print("Admin login test completed successfully")
+
     home_page.logout()
-
-    print("ORG Admin Login Test Completed Successfully")

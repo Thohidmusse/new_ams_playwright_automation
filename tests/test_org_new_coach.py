@@ -4,7 +4,7 @@ from pages.new_org_coach_page import NewCoachPage
 # from utils.config import USERNAME, PASSWORD
 
 @pytest.mark.regression 
-def test_new_coach(logged_in_page):
+def test_org_new_coach(logged_in_page):
     newcoach_page = NewCoachPage(logged_in_page) 
     newcoach_page.create_new_coach() 
 
